@@ -1,0 +1,24 @@
+{% extends 'board/base.html' %}
+
+{% block title %}Доска постов | All Posts{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+<!--  {% for post in post_list %}-->
+<!--  {% include 'includes/post_layout.html'%}-->
+
+<!--  {% empty %}-->
+  <div class="text-center">
+    <h3 class="fw-bold">No posts yet</h3>
+    <p class="lead ">Start posting!</p>
+    <a href="{% url 'board:post_create' %}">
+      <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
+        Add New Post
+      </button>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'board/base.html' %}
+
+{% block title %}
+{{ post.title }} | {{post.category}}
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+  {% include 'includes/post_layout.html'%}
+</div>
+{% endblock content %}

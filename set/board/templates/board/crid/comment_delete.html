@@ -1,0 +1,42 @@
+{% extends 'board/base.html' %}
+
+{% block title %}
+Delete Response
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="container">
+
+  <h2>Delete this response?</h2>
+  <p>
+
+    {{ comment.text }}
+  </p>
+  <p>
+    <b>
+      sent by:
+    </b>
+    <span class="fst-italic">
+      {{ comment.author }}
+    </span>
+    <b>
+      on:
+    </b>
+    <span class="fst-italic">
+      {{ comment.datetime}}
+    </span>
+  </p>
+  <form method="POST">
+    {% csrf_token %}
+    <a href="{% url 'board:comment_delete' comment.pk %}">
+      <button class="btn btn-danger">
+        Delete
+      </button>
+    </a>
+  </form>
+</div>
+
+
+{% endblock content %}

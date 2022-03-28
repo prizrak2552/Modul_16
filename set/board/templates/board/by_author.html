@@ -1,0 +1,13 @@
+{% extends 'board/base.html' %}
+{% block title %}
+{{author}}
+{% endblock title %}
+
+{% block content %}
+
+{% for post in posts %}
+<div class="container">
+  {%include "includes/post_layout.html"%}
+</div>
+{%endfor%}
+{% endblock content %}
